@@ -142,6 +142,17 @@ Custom example:
 go run ./cmd/simulator -url http://localhost:8080 -vehicles 20 -interval 2s -duration 2m
 ```
 
+## Rider Mode Smoke Test
+
+Rider mode is off by default. Exercising it end to end means starting the
+server with `RIDER_MODE_ENABLED=true` and a `GTFS_STATIC_URL`, driving riders
+along a trip with the `cmd/ridersim` simulator, and reading the resulting
+entities back out of `/gtfs-rt/vehicle-positions?source=rider`.
+
+_The step-by-step commands land with `cmd/ridersim` itself; see
+[`README.md`](../README.md#rider-mode-crowdsourced-positions) for the
+configuration and API in the meantime._
+
 ## API Sanity Checks
 
 ### Submit one location
